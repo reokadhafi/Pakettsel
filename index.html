@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Digital Produk & Paket Telkomsel</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -20,12 +24,14 @@
       font-size: 28px;
       color: #e60000;
       margin-bottom: 10px;
+      text-align: center;
     }
 
     .subtitle {
       font-size: 16px;
       color: #666;
       margin-bottom: 30px;
+      text-align: center;
     }
 
     .card {
@@ -54,10 +60,10 @@
       display: inline-block;
       background-color: #e60000;
       color: white;
-      padding: 12px 1px;
+      padding: 12px 16px;
       border-radius: 8px;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 17px;
       transition: background 0.3s ease;
     }
 
@@ -72,22 +78,22 @@
       margin-top: 10px;
     }
 
+    .btn.apk {
+      background-color: #e60000;
+      padding: 12px 16px;
+      font-size: 17px;
+      border-radius: 8px;
+      text-align: center;
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+    }
+
     .note {
       font-size: 13px;
       color: #777;
       text-align: center;
       margin-top: 20px;
-    }
-
-    .btn.apk {
-      display: inline-block;
-      background-color: #e60000;
-      color: white;
-      padding: 6px 10px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 15px;
-      transition: background 0.3s ease;
     }
 
   </style>
@@ -96,8 +102,6 @@
 
   <div class="title">Paket Murah <strong>Telkomsel</strong></div>
   <div class="subtitle">Nikmati akses internet dan alat bantu terbaik</div>
-
-
 
   <!-- Kartu: Paket Telkomsel -->
   <div class="card">
@@ -115,12 +119,12 @@
   <!-- Kartu: Aplikasi VPN -->
   <div class="card">
     <h2>Clash Meta</h2>
-    <p>Aplikasi VPN untuk paket di atas.</p>
+    <p>Aplikasi VPN untuk mengaktifkan paket internet tertentu.</p>
     <a class="btn apk" href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.8/cmfa-2.11.8-meta-universal-release.apk" target="_blank">Download APK</a>
   </div>
 
   <div class="note">
-    Hubungi penyedia configurasi Clash Meta<strong>@reo</strong>.
+    Hubungi penyedia konfigurasi VPN <strong>@reo</strong> untuk configurasi.
   </div>
 
 </body>
