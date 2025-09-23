@@ -36,27 +36,29 @@
     }
 
     table {
-      width: 80%;
+      width: 60%;
       border-collapse: collapse;
       margin: 0 auto 30px auto;
       background: #fff;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       border-radius: 12px;
       overflow: hidden;
-      table-layout: fixed; /* biar kolom rata */
     }
     thead {
       background-color: #e60000;
       color: #fff;
     }
-    th, td {
-      padding: 12px;
+    th {
+      padding: 17px;
+      text-align: center;
       border-bottom: 1px solid #ddd;
       font-size: 14px;
-      text-align: center;
-      white-space: nowrap; /* cegah teks turun ke bawah */
-      overflow: hidden;
-      text-overflow: ellipsis; /* kalau terlalu panjang dipotong */
+    }
+    td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      font-size: 14px;
     }
     tr:last-child td {
       border-bottom: none;
@@ -137,13 +139,6 @@
   <h2 style="text-align:center; color:#e60000; margin-bottom:20px;">Paket Telkomsel via MyTelkomsel</h2>
 
   <table>
-    <colgroup>
-      <col style="width: 30%;"> <!-- Nama Paket lebih lebar -->
-      <col style="width: 10%;">
-      <col style="width: 10%;">
-      <col style="width: 10%;">
-      <col style="width: 10%;">
-    </colgroup>
     <thead>
       <tr>
         <th>Nama Paket</th>
