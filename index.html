@@ -35,44 +35,68 @@
       max-height: 200px;
     }
 
-    table {
-      width: 60%;
-      border-collapse: collapse;
+    .table-container {
+      width: 100%;
+      max-width: 800px;
       margin: 0 auto 30px auto;
-      background: #fff;
+      overflow-x: auto;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       border-radius: 12px;
-      overflow: hidden;
     }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      min-width: 600px;
+    }
+    
     thead {
       background-color: #e60000;
       color: #fff;
     }
+    
     th {
-      padding: 12px;
+      padding: 16px 12px;
       text-align: center;
       border-bottom: 1px solid #ddd;
-      font-size: 14px;
+      font-size: 16px;
+      font-weight: 600;
     }
+    
     td {
-      padding: 12px;
+      padding: 14px 12px;
       text-align: center;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #eee;
       font-size: 14px;
     }
+    
     tr:last-child td {
       border-bottom: none;
     }
+    
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+    
     .btn-beli {
       background-color: #e60000;
       color: #fff;
-      padding: 6px 14px;
+      padding: 8px 16px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s ease, transform 0.2s ease;
       display: inline-block;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
     }
+    
     .btn-beli:hover {
       background-color: #c40000;
       transform: scale(1.05);
@@ -129,6 +153,29 @@
       margin-top: 20px;
       max-height: 200px;
     }
+    
+    .table-title {
+      text-align: center;
+      color: #e60000;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+    
+    @media (max-width: 768px) {
+      .table-container {
+        border-radius: 8px;
+      }
+      
+      th, td {
+        padding: 12px 8px;
+        font-size: 14px;
+      }
+      
+      .btn-beli {
+        padding: 6px 12px;
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -136,35 +183,37 @@
   <div class="title">Paket Murah <strong>Telkomsel</strong></div>
   <div class="subtitle">Nikmati akses internet dengan VPN terbaik</div>
 
-  <h2 style="text-align:center; color:#e60000; margin-bottom:20px;">Paket Telkomsel via MyTelkomsel</h2>
+  <h2 class="table-title">Paket Telkomsel via MyTelkomsel</h2>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Nama Paket</th>
-        <th>Masa Aktif</th>
-        <th>Kuota</th>
-        <th>Harga</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>gamemax</td>
-        <td>30 Hari</td>
-        <td>15 GB</td>
-        <td>Rp20.000</td>
-        <td><a class="btn-beli" href="https://my.telkomsel.com/app/payment-method?link=fa9f025645de4e8458280c7462acc9320240ecf31a041050799da4964d123a9089295a3c5ee1a2d45527e68c20a0e8ae" target="_blank">Beli</a></td>
-      </tr>
-      <tr>
-        <td>gmx_mlbb_unlimited_100kb (tahap uji coba)</td>
-        <td>30 Hari</td>
-        <td>11.5 GB</td>
-        <td>Rp25.000</td>
-        <td><a class="btn-beli" href="https://my.telkomsel.com/app/payment-method?link=053fb7d98b1b22b153d42ae60283bfb5ed5fec0925992db109141d9b0ee58342335cabd2de53093d2c85c60836045d8e" target="_blank">Beli</a></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Nama Paket</th>
+          <th>Masa Aktif</th>
+          <th>Kuota</th>
+          <th>Harga</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>gamemax</td>
+          <td>30 Hari</td>
+          <td>15 GB</td>
+          <td>Rp20.000</td>
+          <td><a class="btn-beli" href="https://my.telkomsel.com/app/payment-method?link=fa9f025645de4e8458280c7462acc9320240ecf31a041050799da4964d123a9089295a3c5ee1a2d45527e68c20a0e8ae" target="_blank">Beli</a></td>
+        </tr>
+        <tr>
+          <td>gmx_mlbb_unlimited_100kb (tahap uji coba)</td>
+          <td>30 Hari</td>
+          <td>11.5 GB</td>
+          <td>Rp25.000</td>
+          <td><a class="btn-beli" href="https://my.telkomsel.com/app/payment-method?link=053fb7d98b1b22b153d42ae60283bfb5ed5fec0925992db109141d9b0ee58342335cabd2de53093d2c85c60836045d8e" target="_blank">Beli</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <!-- Kartu: Paket Telkomsel via Jasa Tembak -->
   <div class="card">
