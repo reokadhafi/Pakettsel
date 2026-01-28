@@ -7,250 +7,404 @@
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f3f4f6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e8ebef 100%);
       color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 30px 15px;
+      padding: 20px 16px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
     .title {
-      font-size: 28px;
+      font-size: 26px;
       color: #e60000;
-      margin-bottom: 10px;
-      text-align: center;
+      margin-bottom: 8px;
+      font-weight: 700;
     }
 
     .subtitle {
-      font-size: 16px;
+      font-size: 15px;
       color: #666;
-      margin-bottom: 30px;
-      text-align: center;
-      max-height: 200px;
+      line-height: 1.5;
     }
 
-    .table-container {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto 30px auto;
-      overflow-x: auto;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      border-radius: 12px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fff;
-      min-width: 600px;
-    }
-    
-    thead {
-      background-color: #e60000;
-      color: #fff;
-    }
-    
-    th {
-      padding: 16px 12px;
+    /* Section Title */
+    .section-title {
       text-align: center;
-      border-bottom: 1px solid #ddd;
-      font-size: 16px;
+      color: #e60000;
+      font-size: 20px;
+      margin: 30px 0 20px;
       font-weight: 600;
     }
-    
-    td {
-      padding: 14px 12px;
-      text-align: center;
-      border-bottom: 1px solid #eee;
-      font-size: 14px;
-    }
-    
-    tr:last-child td {
-      border-bottom: none;
-    }
-    
-    tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
-    
-    tr:hover {
-      background-color: #f5f5f5;
-    }
-    
-    .btn-beli {
-      background-color: #e60000;
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease, transform 0.2s ease;
-      display: inline-block;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    
-    .btn-beli:hover {
-      background-color: #c40000;
-      transform: scale(1.05);
+
+    /* Table Package */
+    .package-grid {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 30px;
     }
 
-    .card {
+    .package-card {
       background: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      padding: 24px;
-      max-width: 500px;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border: 1px solid #f0f0f0;
+      transition: all 0.3s ease;
+    }
+
+    .package-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(230,0,0,0.12);
+    }
+
+    .package-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f5f5f5;
+    }
+
+    .package-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .package-price {
+      font-size: 20px;
+      font-weight: 700;
+      color: #e60000;
+    }
+
+    .package-details {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .detail-icon {
+      width: 18px;
+      height: 18px;
+      color: #e60000;
+    }
+
+    .btn-beli {
+      display: block;
       width: 100%;
-      margin-bottom: 30px;
-      text-align: left;
+      background: linear-gradient(135deg, #e60000 0%, #c40000 100%);
+      color: white;
+      padding: 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(230,0,0,0.2);
+      font-size: 15px;
+    }
+
+    .btn-beli:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(230,0,0,0.3);
+    }
+
+    .btn-beli:active {
+      transform: translateY(0);
+    }
+
+    /* Service Cards */
+    .service-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border: 1px solid #f0f0f0;
+    }
+
+    .service-card h2 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 16px;
     }
 
     .btn {
-      display: inline-block;
-      background-color: #e60000;
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #e60000 0%, #c40000 100%);
       color: white;
-      padding: 12px 16px;
-      border-radius: 8px;
+      padding: 14px;
+      border-radius: 10px;
       text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease;
+      margin-bottom: 10px;
       font-size: 14px;
-      transition: background 0.3s ease;
+      box-shadow: 0 2px 8px rgba(230,0,0,0.2);
     }
 
     .btn:hover {
-      background-color: #c40000;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(230,0,0,0.3);
     }
 
-    .btn-block {
-      display: block;
-      width: 100%;
-      text-align: center;
-      margin-top: 10px;
+    .btn:last-child {
+      margin-bottom: 0;
     }
 
-    .btn.apk {
-      background-color: #e60000;
-      padding: 12px 16px;
-      font-size: 14px;
-      border-radius: 8px;
+    /* Footer Notes */
+    .footer {
+      margin-top: 40px;
       text-align: center;
-      display: block;
-      width: 100%;
-      margin-top: 10px;
     }
 
     .note {
+      background: white;
+      padding: 16px;
+      border-radius: 10px;
       font-size: 13px;
-      color: #777;
-      text-align: center;
-      margin-top: 20px;
-      max-height: 200px;
+      color: #666;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      line-height: 1.6;
     }
-    
-    .table-title {
-      text-align: center;
+
+    .note a {
       color: #e60000;
-      margin-bottom: 20px;
-      font-size: 22px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
-    
-    @media (max-width: 768px) {
-      .table-container {
-        border-radius: 8px;
+
+    .note img {
+      vertical-align: middle;
+    }
+
+    .copyright {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #999;
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-block;
+      background: #fff3f3;
+      color: #e60000;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .package-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
-      
-      th, td {
-        padding: 12px 8px;
+
+      .title {
+        font-size: 32px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 16px 12px;
+      }
+
+      .header {
+        padding: 16px;
+      }
+
+      .title {
+        font-size: 22px;
+      }
+
+      .subtitle {
         font-size: 14px;
       }
-      
-      .btn-beli {
-        padding: 6px 12px;
-        font-size: 13px;
+
+      .package-card {
+        padding: 16px;
       }
+
+      .package-name {
+        font-size: 16px;
+      }
+
+      .package-price {
+        font-size: 18px;
+      }
+
+      .service-card {
+        padding: 20px;
+      }
+    }
+
+    /* Icons using CSS */
+    .icon-calendar::before {
+      content: "📅";
+      margin-right: 4px;
+    }
+
+    .icon-data::before {
+      content: "📊";
+      margin-right: 4px;
     }
   </style>
 </head>
 <body>
 
-  <div class="title">Paket Murah <strong>Telkomsel</strong></div>
-  <div class="subtitle">Nikmati akses internet dengan VPN terbaik</div>
+  <div class="container">
+    
+    <!-- Header -->
+    <div class="header">
+      <div class="title">Paket Murah <strong>Telkomsel</strong></div>
+      <div class="subtitle">Nikmati akses internet dengan VPN terbaik</div>
+    </div>
 
-  <h2 class="table-title">Paket Telkomsel via MyTelkomsel</h2>
+    <!-- Paket MyTelkomsel -->
+    <h2 class="section-title">📱 Paket via MyTelkomsel</h2>
+    
+    <div class="package-grid">
+      <div class="package-card">
+        <div class="package-header">
+          <div class="package-name">Paket 15GB V1</div>
+          <div class="package-price">Rp20.000</div>
+        </div>
+        <div class="package-details">
+          <div class="detail-item">
+            <span class="icon-calendar"></span>
+            <span>30 Hari</span>
+          </div>
+          <div class="detail-item">
+            <span class="icon-data"></span>
+            <span>15 GB</span>
+          </div>
+        </div>
+        <a class="btn-beli" href="https://my.telkomsel.com/app/payment-method?link=fa9f025645de4e8458280c7462acc9320240ecf31a041050799da4964d123a9089295a3c5ee1a2d45527e68c20a0e8ae" target="_blank" rel="noopener">Beli Sekarang</a>
+      </div>
 
-  <div class="table-container">
-    <table>
-      <thead>
-        <tr>
-          <th>Nama Paket</th>
-          <th>Masa Aktif</th>
-          <th>Kuota</th>
-          <th>Harga</th>
-          <th>Aksi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Paket 15GB</td>
-          <td>30 Hari</td>
-          <td>15 GB</td>
-          <td>Rp20.000</td>
-          <td><a class="btn-beli" href="https://my.telkomsel.com/app/payment-method?link=fa9f025645de4e8458280c7462acc9320240ecf31a041050799da4964d123a9089295a3c5ee1a2d45527e68c20a0e8ae" target="_blank">Beli</a></td>
-        </tr>
-        <tr>
-          <td>Paket 15GB V2</td>
-          <td>30 Hari</td>
-          <td>15 GB</td>
-          <td>Rp20.000</td>
-          <td><a class="btn-beli" href="https://my.telkomsel.com/app/package-details/17cfca68ad4aed9b853457a8f60fc38a?utm_source=Google&utm_medium=SEM&utm_campaign=TSEL-SImpatigeneralQ1-BC-10721&utm_term=Text&utm_content=SIMPATINonton" target="_blank">Beli</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+      <div class="package-card">
+        <div class="package-header">
+          <div class="package-name">Paket 15GB V2<span class="badge">New</span></div>
+          <div class="package-price">Rp20.000</div>
+        </div>
+        <div class="package-details">
+          <div class="detail-item">
+            <span class="icon-calendar"></span>
+            <span>30 Hari</span>
+          </div>
+          <div class="detail-item">
+            <span class="icon-data"></span>
+            <span>15 GB</span>
+          </div>
+        </div>
+        <a class="btn-beli" href="https://my.telkomsel.com/app/package-details/17cfca68ad4aed9b853457a8f60fc38a?utm_source=Google&utm_medium=SEM&utm_campaign=TSEL-SImpatigeneralQ1-BC-10721&utm_term=Text&utm_content=SIMPATINonton" target="_blank" rel="noopener">Beli Sekarang</a>
+      </div>
+    </div>
 
-  <!-- Kartu: Paket Telkomsel via Jasa Tembak -->
-  <div class="card">
-    <h2>Paket Telkomsel via Jasa Tembak</h2>
-    <a class="btn btn-block" href="http://lynk.id/reokadhafi/zz2wdv619r2o/" target="_blank" rel="noopener">
-      Kuota 15GB - Rp25.000 - 30 Hari
-    </a>
-  </div>
+    <!-- Paket Jasa Tembak -->
+    <h2 class="section-title">🎯 Paket via Jasa Tembak</h2>
+    
+    <div class="service-card">
+      <h2>Kuota 15GB</h2>
+      <p>Paket kuota 15GB dengan masa aktif 30 hari melalui jasa tembak terpercaya</p>
+      <a class="btn" href="http://lynk.id/reokadhafi/zz2wdv619r2o/" target="_blank" rel="noopener">
+        💳 Beli Rp25.000 - 30 Hari
+      </a>
+    </div>
 
-  <!-- Kartu: Paket VPN -->
-  <div class="card">
-    <h2>Paket VPN</h2>
-    <a class="btn btn-block" href="http://lynk.id/reokadhafi/89oqjko79o0o/" target="_blank" rel="noopener">
-      VPN Rp20.000 - 30 Hari
-    </a>
-  </div>
+    <!-- Paket VPN -->
+    <h2 class="section-title">🔒 Paket VPN Premium</h2>
+    
+    <div class="service-card">
+      <h2>VPN Premium 30 Hari</h2>
+      <p>Akses VPN stabil dan cepat untuk menggunakan paket internet dengan optimal</p>
+      <a class="btn" href="http://lynk.id/reokadhafi/89oqjko79o0o/" target="_blank" rel="noopener">
+        🚀 Beli VPN Rp20.000 - 30 Hari
+      </a>
+    </div>
 
-  <!-- Kartu: Aplikasi VPN -->
-  <div class="card">
-    <h2>Clash Meta</h2>
-    <p>Aplikasi VPN untuk mengaktifkan paket internet tertentu.</p>
-    <a class="btn apk" href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank">Release Github</a>
-    <a class="btn apk" href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.20/cmfa-2.11.20-meta-universal-release.apk" target="_blank">Download APK</a>
-  </div>
+    <!-- Aplikasi VPN -->
+    <h2 class="section-title">📲 Aplikasi VPN</h2>
+    
+    <div class="service-card">
+      <h2>Clash Meta for Android</h2>
+      <p>Aplikasi VPN terbaik untuk mengaktifkan paket internet tertentu. Gratis dan open source.</p>
+      <a class="btn" href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank" rel="noopener">
+        🌐 Lihat Semua Versi di GitHub
+      </a>
+      <a class="btn" href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.22/cmfa-2.11.22-meta-universal-release.apk" target="_blank" rel="noopener">
+        ⬇️ Download APK (v2.11.22)
+      </a>
+    </div>
 
-  <div class="note">
-    Paket Telkomsel ini hanya dapat digunakan dengan VPN.
-  </div>
-  <div class="note">
-    Hubungi penyedia 
-    <a href="https://wa.me/6281247888889" target="_blank" style="text-decoration: none;">
-      <img src="https://img.icons8.com/ios-filled/16/25D366/whatsapp.png" alt="WA" style="vertical-align: middle; margin-right: 1px;"/>
-      <strong>@reo</strong>
-    </a>
-  </div>
-  <div class="note">
-    <strong>2025</strong>
+    <!-- Footer -->
+    <div class="footer">
+      <div class="note">
+        ⚠️ <strong>Penting:</strong> Paket Telkomsel ini hanya dapat digunakan dengan VPN
+      </div>
+      <div class="note">
+        💬 Hubungi penyedia: 
+        <a href="https://wa.me/6281247888889" target="_blank" rel="noopener">
+          <img src="https://img.icons8.com/ios-filled/16/25D366/whatsapp.png" alt="WA"/>
+          <strong>@reo di WhatsApp</strong>
+        </a>
+      </div>
+      <div class="copyright">
+        © 2025 Paket Telkomsel
+      </div>
+    </div>
+
   </div>
 
 </body>
