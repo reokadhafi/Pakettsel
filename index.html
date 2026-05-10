@@ -427,17 +427,82 @@
       <a class="btn" href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases" target="_blank" rel="noopener">
         🌐 Lihat Semua Versi di GitHub
       </a>
-      <a class="btn" href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.26/cmfa-2.11.26-meta-universal-release.apk" target="_blank" rel="noopener">
-        ⬇️ Download APK (v2.11.26)
+      <a class="btn" href="https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.27/cmfa-2.11.27-meta-universal-release.apk" target="_blank" rel="noopener">
+        ⬇️ Download APK (v2.11.27)
       </a>
-      <a class="btn" href="https://www.mediafire.com/file/y74h6ovj8h87zyo/cmfa-2.11.26-meta-universal-release.apk/file" target="_blank" rel="noopener">
-        ⬇️ Download APK via Mediafire (v2.11.26)
-      </a>
-      <a class="btn" href="https://drive.google.com/file/d/1P7-UOlFG9dtfR-QR0gevSLu1ydTLREgK/view?usp=sharing" target="_blank" rel="noopener">
-        ⬇️ Download APK via gDrive (v2.11.26)
+      <a class="btn" href="https://drive.google.com/file/d/1bmWcoUveCjcoIAMODMPeOWBf93Nkw8qN/view?usp=sharing" target="_blank" rel="noopener">
+        ⬇️ Download APK via gDrive (v2.11.27)
       </a>
     </div>
+    <!-- QR Generator -->
+    <h2 class="section-title">🔳 QR Code Generator</h2>
 
+    <div class="service-card">
+      <h2>Buat QR dari Link</h2>
+      <p>Masukkan link lalu generate QR code secara otomatis langsung di browser.</p>
+
+      <input 
+        type="text" 
+        id="linkInput"
+        placeholder="Masukkan link..."
+        style="
+          width:100%;
+          padding:14px;
+          border-radius:10px;
+          border:1px solid #ddd;
+          margin-bottom:14px;
+          font-size:14px;
+        "
+      >
+
+      <button 
+        onclick="generateQR()"
+        style="
+          width:100%;
+          padding:14px;
+          border:none;
+          border-radius:10px;
+          background:linear-gradient(135deg,#e60000 0%,#c40000 100%);
+          color:white;
+          font-weight:600;
+          cursor:pointer;
+          font-size:14px;
+        "
+      >
+        🔳 Buat QR Code
+      </button>
+
+      <div 
+        id="qrcode"
+        style="
+          margin-top:20px;
+          display:flex;
+          justify-content:center;
+        "
+      ></div>
+    </div>
+
+    <!-- Library QR -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
+    <script>
+    function generateQR() {
+      const link = document.getElementById("linkInput").value;
+
+      if (!link) {
+        alert("Masukkan link dulu");
+        return;
+      }
+
+      document.getElementById("qrcode").innerHTML = "";
+
+      new QRCode(document.getElementById("qrcode"), {
+        text: link,
+        width: 220,
+        height: 220
+      });
+    }
+    </script>
     <!-- Footer -->
     <div class="footer">
       <div class="note">
@@ -456,6 +521,6 @@
     </div>
 
   </div>
-
+  
 </body>
 </html>
