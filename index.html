@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Produk & Paket Telkomsel</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e8ebef 100%);
+      color: #333;
+      padding: 20px 16px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .title {
+      font-size: 26px;
+      color: #e60000;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      color: #e60000;
+      font-size: 20px;
+      margin: 30px 0 20px;
+      font-weight: 600;
+    }
+
+    /* Table Package */
+    .package-grid {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .package-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border: 1px solid #f0f0f0;
+      transition: all 0.3s ease;
+    }
+
+    .package-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(230,0,0,0.12);
+    }
+
+    .package-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f5f5f5;
+    }
+
+    .package-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .package-price {
+      font-size: 20px;
+      font-weight: 700;
+      color: #e60000;
+    }
+
+    .package-details {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .detail-icon {
+      width: 18px;
+      height: 18px;
+      color: #e60000;
+    }
+
+    .btn-beli {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #e60000 0%, #c40000 100%);
+      color: white;
+      padding: 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(230,0,0,0.2);
+      font-size: 15px;
+    }
+
+    .btn-beli:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(230,0,0,0.3);
+    }
+
+    .btn-beli:active {
+      transform: translateY(0);
+    }
+
+    /* Service Cards */
+    .service-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border: 1px solid #f0f0f0;
+    }
+
+    .service-card h2 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #e60000 0%, #c40000 100%);
+      color: white;
+      padding: 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease;
+      margin-bottom: 10px;
+      font-size: 14px;
+      box-shadow: 0 2px 8px rgba(230,0,0,0.2);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(230,0,0,0.3);
+    }
+
+    .btn:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Footer Notes */
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .note {
+      background: white;
+      padding: 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      line-height: 1.6;
+    }
+
+    .note a {
+      color: #e60000;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .note img {
+      vertical-align: middle;
+    }
+
+    .copyright {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #999;
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-block;
+      background: #fff3f3;
+      color: #e60000;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .package-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .title {
+        font-size: 32px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 16px 12px;
+      }
+
+      .header {
+        padding: 16px;
+      }
+
+      .title {
+        font-size: 22px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+      }
+
+      .package-card {
+        padding: 16px;
+      }
+
+      .package-name {
+        font-size: 16px;
+      }
+
+      .package-price {
+        font-size: 18px;
+      }
+
+      .service-card {
+        padding: 20px;
+      }
+    }
+
+    /* Icons using CSS */
+    .icon-calendar::before {
+      content: "📅";
+      margin-right: 4px;
+    }
+
+    .icon-data::before {
+      content: "📊";
+      margin-right: 4px;
+    }
+    .icon-promo::before {
+      content: "🚨";
+      margin-right: 4px;
+      
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Header -->
+    <div class="header">
+      <div class="title">Paket Murah <strong>Telkomsel</strong></div>
+      <div class="subtitle">Nikmati akses internet dengan VPN terbaik</div>
+    </div>
+
+    <!-- CORS Alert for local testing -->
+    <div id="cors-warning" style="display: none; background: #fff8e1; border-left: 4px solid #ffb300; padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; font-size: 13px; color: #5d4037; line-height: 1.5; box-shadow: 0 1px 3px rgba(0,0,0,0.05); font-family: sans-serif;">
+      ⚠️ <strong>Membuka File Secara Lokal (Offline):</strong> Anda membuka halaman ini langsung dari file komputer. Perubahan di <code>database.json</code> hanya akan terlihat jika halaman dijalankan menggunakan web server lokal (seperti ekstensi <strong>Live Server</strong> di VS Code). Halaman ini saat ini menampilkan data cadangan bawaan agar tetap berfungsi dengan baik.
+    </div>
+
+    <!-- Paket MyTelkomsel -->
+    <h2 class="section-title">📱 Paket via MyTelkomsel</h2>
+    
+    <div class="package-grid" id="mytelkomsel-list">
+      <!-- Paket MyTelkomsel akan dimuat secara dinamis -->
+    </div>
+
+    <!-- Paket Jasa Tembak -->
+    <h2 class="section-title">🎯 Paket via Jasa Tembak</h2>
+    
+    <div id="jasa-tembak-list">
+      <!-- Paket Jasa Tembak akan dimuat secara dinamis -->
+    </div>
+
+    <!-- Paket VPN -->
+    <h2 class="section-title">🔒 Paket VPN Premium</h2>
+    
+    <div id="vpn-premium-list">
+      <!-- Paket VPN akan dimuat secara dinamis -->
+    </div>
+
+    <!-- Aplikasi VPN -->
+    <h2 class="section-title">📲 Aplikasi VPN</h2>
+    <div id="aplikasi-vpn-list">
+      <!-- Aplikasi VPN akan dimuat secara dinamis -->
+    </div>
+    <!-- QR Generator -->
+    <h2 class="section-title">🔳 QR Code Generator</h2>
+
+    <div class="service-card">
+      <h2>Buat QR dari Link</h2>
+      <p>Masukkan link lalu generate QR code secara otomatis langsung di browser.</p>
+
+      <input 
+        type="text" 
+        id="linkInput"
+        placeholder="Masukkan link..."
+        style="
+          width:100%;
+          padding:14px;
+          border-radius:10px;
+          border:1px solid #ddd;
+          margin-bottom:14px;
+          font-size:14px;
+        "
+      >
+
+      <button 
+        onclick="generateQR()"
+        style="
+          width:100%;
+          padding:14px;
+          border:none;
+          border-radius:10px;
+          background:linear-gradient(135deg,#e60000 0%,#c40000 100%);
+          color:white;
+          font-weight:600;
+          cursor:pointer;
+          font-size:14px;
+        "
+      >
+        🔳 Buat QR Code
+      </button>
+
+      <div 
+        id="qrcode"
+        style="
+          margin-top:20px;
+          display:flex;
+          justify-content:center;
+        "
+      ></div>
+    </div>
+
+    <!-- Library QR -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+
+    <script>
+    function generateQR() {
+      const link = document.getElementById("linkInput").value;
+
+      if (!link) {
+        alert("Masukkan link dulu");
+        return;
+      }
+
+      document.getElementById("qrcode").innerHTML = "";
+
+      new QRCode(document.getElementById("qrcode"), {
+        text: link,
+        width: 220,
+        height: 220
+      });
+    }
+
+    function renderPackages(data) {
+      // 1. Render MyTelkomsel
+      const myTelkomselContainer = document.getElementById("mytelkomsel-list");
+      if (myTelkomselContainer && data.paket_mytelkomsel) {
+        myTelkomselContainer.innerHTML = "";
+        const activePkgs = data.paket_mytelkomsel.filter(p => p.aktif);
+        if (activePkgs.length === 0) {
+          myTelkomselContainer.innerHTML = '<p class="subtitle" style="grid-column: 1/-1; text-align: center; padding: 20px;">Tidak ada paket aktif.</p>';
+        } else {
+          activePkgs.forEach(pkg => {
+            const badgeHTML = pkg.badge ? `<span class="badge">${pkg.badge}</span>` : "";
+            const quotaBadgeHTML = pkg.quota_badge ? `<span class="badge">${pkg.quota_badge}</span>` : "";
+            const card = document.createElement("div");
+            card.className = "package-card";
+            card.innerHTML = `
+              <div class="package-header">
+                <div class="package-name">${pkg.nama}${badgeHTML}</div>
+                <div class="package-price">${pkg.harga}</div>
+              </div>
+              <div class="package-details">
+                <div class="detail-item">
+                  <span class="icon-calendar"></span>
+                  <span>${pkg.masa_aktif}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="icon-data"></span>
+                  <span>${pkg.kuota}</span>
+                  ${quotaBadgeHTML}
+                </div>
+              </div>
+              <a class="btn-beli" href="${pkg.link}" target="_blank" rel="noopener">Beli Sekarang</a>
+            `;
+            myTelkomselContainer.appendChild(card);
+          });
+        }
+      }
+
+      // 2. Render Jasa Tembak
+      const jasaTembakContainer = document.getElementById("jasa-tembak-list");
+      if (jasaTembakContainer && data.paket_jasa_tembak) {
+        jasaTembakContainer.innerHTML = "";
+        const activePkgs = data.paket_jasa_tembak.filter(p => p.aktif);
+        if (activePkgs.length === 0) {
+          jasaTembakContainer.innerHTML = '<p class="subtitle" style="text-align: center; padding: 20px;">Tidak ada paket aktif.</p>';
+        } else {
+          activePkgs.forEach(pkg => {
+            const card = document.createElement("div");
+            card.className = "service-card";
+            card.innerHTML = `
+              <h2>${pkg.nama}</h2>
+              <p>${pkg.deskripsi}</p>
+              <a class="btn" href="${pkg.link}" target="_blank" rel="noopener">
+                💳 Beli ${pkg.harga} - ${pkg.masa_aktif}
+              </a>
+            `;
+            jasaTembakContainer.appendChild(card);
+          });
+        }
+      }
+
+      // 3. Render VPN Premium
+      const vpnPremiumContainer = document.getElementById("vpn-premium-list");
+      if (vpnPremiumContainer && data.paket_vpn_premium) {
+        vpnPremiumContainer.innerHTML = "";
+        const activePkgs = data.paket_vpn_premium.filter(p => p.aktif);
+        if (activePkgs.length === 0) {
+          vpnPremiumContainer.innerHTML = '<p class="subtitle" style="text-align: center; padding: 20px;">Tidak ada paket aktif.</p>';
+        } else {
+          activePkgs.forEach(pkg => {
+            const card = document.createElement("div");
+            card.className = "service-card";
+            card.innerHTML = `
+              <h2>${pkg.nama}</h2>
+              <p>${pkg.deskripsi}</p>
+              <a class="btn" href="${pkg.link}" target="_blank" rel="noopener">
+                🚀 Beli VPN ${pkg.harga} - ${pkg.masa_aktif}
+              </a>
+            `;
+            vpnPremiumContainer.appendChild(card);
+          });
+        }
+      }
+
+      // 4. Render Aplikasi VPN
+      const aplikasiVpnContainer = document.getElementById("aplikasi-vpn-list");
+      if (aplikasiVpnContainer && data.aplikasi_vpn) {
+        aplikasiVpnContainer.innerHTML = "";
+        const activeApps = data.aplikasi_vpn.filter(app => app.aktif);
+        if (activeApps.length === 0) {
+          aplikasiVpnContainer.innerHTML = '<p class="subtitle" style="text-align: center; padding: 20px;">Tidak ada aplikasi VPN aktif.</p>';
+        } else {
+          activeApps.forEach(app => {
+            const card = document.createElement("div");
+            card.className = "service-card";
+            
+            let buttonsHTML = "";
+            if (app.links && app.links.length > 0) {
+              app.links.forEach(link => {
+                buttonsHTML += `
+                  <a class="btn" href="${link.url}" target="_blank" rel="noopener">
+                    ${link.teks}
+                  </a>
+                `;
+              });
+            }
+            
+            card.innerHTML = `
+              <h2>${app.nama}</h2>
+              <p>${app.deskripsi}</p>
+              ${buttonsHTML}
+            `;
+            aplikasiVpnContainer.appendChild(card);
+          });
+        }
+      }
+    }
+
+    function renderError(message) {
+      const containers = [
+        "mytelkomsel-list",
+        "jasa-tembak-list",
+        "vpn-premium-list",
+        "aplikasi-vpn-list"
+      ];
+      containers.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.innerHTML = `
+            <div style="background: #ffebee; border-left: 4px solid #f44336; padding: 12px; border-radius: 8px; margin: 10px 0; font-size: 13px; color: #c62828; font-family: sans-serif;">
+              ⚠️ <strong>Error:</strong> Gagal memuat data dari <code>database.json</code>. Pastikan file ada atau jalankan web server lokal.
+            </div>
+          `;
+        }
+      });
+    }
+
+    // Load data dari database.json
+    async function loadDatabase() {
+      const isLocalFile = window.location.protocol === 'file:';
+      
+      try {
+        const response = await fetch('database.json');
+        if (!response.ok) {
+          throw new Error('Gagal memuat database.json');
+        }
+        const data = await response.json();
+        renderPackages(data);
+        console.log('Database loaded successfully from database.json');
+      } catch (error) {
+        console.error('Database load failed:', error.message);
+        
+        // Tampilkan warning jika dijalankan lokal via protocol file://
+        if (isLocalFile) {
+          const warningEl = document.getElementById('cors-warning');
+          if (warningEl) warningEl.style.display = 'block';
+        }
+        
+        renderError(error.message);
+      }
+    }
+
+    // Jalankan loadDatabase ketika DOM telah dimuat
+    document.addEventListener("DOMContentLoaded", loadDatabase);
+    </script>
+    <!-- Footer -->
+    <div class="footer">
+      <div class="note">
+        ⚠️ <strong>Penting:</strong> Paket Telkomsel ini hanya dapat digunakan dengan VPN
+      </div>
+      <div class="note">
+        💬 Hubungi penyedia: 
+        <a href="https://wa.me/6281247888889" target="_blank" rel="noopener">
+          <img src="https://img.icons8.com/ios-filled/16/25D366/whatsapp.png" alt="WA"/>
+          <strong>@reo di WhatsApp</strong>
+        </a>
+      </div>
+      <div class="copyright">
+        © 2025 Paket Telkomsel
+      </div>
+    </div>
+
+  </div>
+  
+</body>
+</html>

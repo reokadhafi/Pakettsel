@@ -1,0 +1,85 @@
+{
+  "paket_mytelkomsel": [
+    {
+      "nama": "Paket 15GB V1",
+      "harga": "Rp20.000",
+      "masa_aktif": "30 Hari",
+      "kuota": "15 GB",
+      "badge": "",
+      "quota_badge": "",
+      "link": "https://my.telkomsel.com/app/payment-method?link=fa9f025645de4e8458280c7462acc9320240ecf31a041050799da4964d123a9089295a3c5ee1a2d45527e68c20a0e8ae",
+      "aktif": true
+    },
+    {
+      "nama": "Paket 15GB V2",
+      "harga": "Rp20.000",
+      "masa_aktif": "30 Hari",
+      "kuota": "15 GB",
+      "badge": "New",
+      "quota_badge": "",
+      "link": "https://my.telkomsel.com/app/package-details/17cfca68ad4aed9b853457a8f60fc38a?utm_source=Google&utm_medium=SEM&utm_campaign=TSEL-SImpatigeneralQ1-BC-10721&utm_term=Text&utm_content=SIMPATINonton",
+      "aktif": true
+    },
+    {
+      "nama": "Nelpon 300m",
+      "harga": "Rp5.000",
+      "masa_aktif": "30 Hari",
+      "kuota": "300 Menit",
+      "badge": "🔥",
+      "quota_badge": "Hanya tersedia saat promo",
+      "link": "https://my.telkomsel.com/app/package-details/24c83614692b6b2759d529a6de7c39e7",
+      "aktif": false
+    },
+    {
+      "nama": "Nelpon 600m",
+      "harga": "Rp50.000",
+      "masa_aktif": "30 Hari",
+      "kuota": "600 Menit",
+      "badge": "",
+      "quota_badge": "",
+      "link": "https://my.telkomsel.com/v2/basic/package-detail?pkg-detail-id=wfVSx4D7hUrGix-js27CW0VXRZWN9k4eBvp3YlNHnR48giE&menu-id=telpsms&version=2.7.6",
+      "aktif": false
+    }
+  ],
+  "paket_jasa_tembak": [
+    {
+      "nama": "Kuota 15GB",
+      "deskripsi": "Paket kuota 15GB dengan masa aktif 30 hari melalui jasa tembak terpercaya",
+      "harga": "Rp25.000",
+      "masa_aktif": "30 Hari",
+      "link": "http://lynk.id/reokadhafi/zz2wdv619r2o/",
+      "aktif": true
+    }
+  ],
+  "paket_vpn_premium": [
+    {
+      "nama": "VPN Premium 30 Hari",
+      "deskripsi": "Akses VPN stabil dan cepat untuk menggunakan paket internet dengan optimal",
+      "harga": "Rp20.000",
+      "masa_aktif": "30 Hari",
+      "link": "http://lynk.id/reokadhafi/89oqjko79o0o/",
+      "aktif": true
+    }
+  ],
+  "aplikasi_vpn": [
+    {
+      "nama": "Clash Meta for Android",
+      "deskripsi": "Aplikasi VPN terbaik untuk mengaktifkan paket internet tertentu. Gratis dan open source.",
+      "aktif": true,
+      "links": [
+        {
+          "teks": "🌐 Lihat Semua Versi di GitHub",
+          "url": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases"
+        },
+        {
+          "teks": "⬇️ Download APK (v2.11.27)",
+          "url": "https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.27/cmfa-2.11.27-meta-universal-release.apk"
+        },
+        {
+          "teks": "⬇️ Download APK via gDrive (v2.11.27)",
+          "url": "https://drive.google.com/file/d/1bmWcoUveCjcoIAMODMPeOWBf93Nkw8qN/view?usp=sharing"
+        }
+      ]
+    }
+  ]
+}
