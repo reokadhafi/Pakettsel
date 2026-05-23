@@ -557,7 +557,7 @@
       const isLocalFile = window.location.protocol === 'file:';
       
       try {
-        const response = await fetch('database.json');
+        const response = await fetch(`database.json?v=${Date.now()}`);
         if (!response.ok) {
           throw new Error('Gagal memuat database.json');
         }
