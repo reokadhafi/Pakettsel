@@ -21,14 +21,14 @@
       "aktif": true
     },
     {
-      "nama": "Nelpon 300m",
-      "harga": "Rp5.000",
-      "masa_aktif": "30 Hari",
-      "kuota": "300 Menit",
-      "badge": "🔥",
-      "quota_badge": "Hanya tersedia saat promo",
-      "link": "https://my.telkomsel.com/app/package-details/24c83614692b6b2759d529a6de7c39e7",
-      "aktif": false
+      "nama": "Nelpon 150m",
+      "harga": "Rp30.000",
+      "masa_aktif": "7 Hari",
+      "kuota": "150 Menit",
+      "badge": "All operator",
+      "quota_badge": "Menggunakan app mytsel basic",
+      "link": "https://my.telkomsel.com/basic/package-detail?pkg-detail-id=wfVSx4D7gkjIgx-js27CW0VWQP1r5c8Ws0itFo1xg-Fsr30&menu-id=telpsms",
+      "aktif": true
     },
     {
       "nama": "Nelpon 600m",
