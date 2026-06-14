@@ -1,7 +1,7 @@
 {
   "paket_mytelkomsel": [
     {
-      "nama": "Paket 15GB V1",
+      "nama": "Paket GMX 15GB V1",
       "harga": "Rp20.000",
       "masa_aktif": "30 Hari",
       "kuota": "15 GB",
@@ -11,7 +11,7 @@
       "aktif": true
     },
     {
-      "nama": "Paket 15GB V2",
+      "nama": "Paket GMX 15GB V2",
       "harga": "Rp20.000",
       "masa_aktif": "30 Hari",
       "kuota": "15 GB",
@@ -21,7 +21,7 @@
       "aktif": true
     },
     {
-      "nama": "Paket 22GB",
+      "nama": "Paket IlmuPedia 22GB",
       "harga": "Rp13.500",
       "masa_aktif": "7 Hari",
       "kuota": "22 GB",
