@@ -18,7 +18,7 @@
       "badge": "New",
       "quota_badge": "",
       "link": "https://my.telkomsel.com/app/package-details/17cfca68ad4aed9b853457a8f60fc38a?utm_source=Google&utm_medium=SEM&utm_campaign=TSEL-SImpatigeneralQ1-BC-10721&utm_term=Text&utm_content=SIMPATINonton",
-      "aktif": true
+      "aktif": false
     },
     {
       "nama": "Paket IlPed 22GB",
@@ -38,7 +38,7 @@
       "badge": "All operator",
       "quota_badge": "Menggunakan app mytsel basic",
       "link": "https://my.telkomsel.com/basic/package-detail?pkg-detail-id=wfVSx4D7gkjIgx-js27CW0VWQP1r5c8Ws0itFo1xg-Fsr30&menu-id=telpsms",
-      "aktif": true
+      "aktif": false
     },
     {
       "nama": "Nelpon 200m",
@@ -48,7 +48,7 @@
       "badge": "All operator",
       "quota_badge": "Menggunakan app mytsel basic",
       "link": "https://my.telkomsel.com/basic/package-detail?pkg-detail-id=wfVSx4D7gkjIgx-js27CW0VXQ-QI0PoVSny5bAaccijE4WY&menu-id=telpsms",
-      "aktif": true
+      "aktif": false
     }
   ],
   "paket_jasa_tembak": [
