@@ -31,24 +31,24 @@
       "aktif": true
     },
     {
-      "nama": "Nelpon 150m",
-      "harga": "Rp30.000",
-      "masa_aktif": "7 Hari",
-      "kuota": "150 Menit",
-      "badge": "All operator",
-      "quota_badge": "Menggunakan app mytsel basic",
-      "link": "https://my.telkomsel.com/basic/package-detail?pkg-detail-id=wfVSx4D7gkjIgx-js27CW0VWQP1r5c8Ws0itFo1xg-Fsr30&menu-id=telpsms",
-      "aktif": false
+      "nama": "Nelpon 300m",
+      "harga": "Rp5.000",
+      "masa_aktif": "30 Hari",
+      "kuota": "300 Menit",
+      "badge": "",
+      "quota_badge": "sekali beli",
+      "link": "https://my.telkomsel.com/app/package-details/ad3920ab381ba6295280c1f7296a70cf",
+      "aktif": true
     },
     {
-      "nama": "Nelpon 200m",
-      "harga": "Rp35.000",
+      "nama": "Nelpon 600m",
+      "harga": "Rp10.000",
       "masa_aktif": "30 Hari",
-      "kuota": "200 Menit",
-      "badge": "All operator",
-      "quota_badge": "Menggunakan app mytsel basic",
-      "link": "https://my.telkomsel.com/basic/package-detail?pkg-detail-id=wfVSx4D7gkjIgx-js27CW0VXQ-QI0PoVSny5bAaccijE4WY&menu-id=telpsms",
-      "aktif": false
+      "kuota": "600 Menit",
+      "badge": "",
+      "quota_badge": "sekali beli",
+      "link": "https://my.telkomsel.com/app/package-details/6a1abf0322294e59fe3790bb0bbb509c",
+      "aktif": true
     }
   ],
   "paket_jasa_tembak": [
