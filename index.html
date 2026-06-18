@@ -24,26 +24,94 @@
       margin: 0 auto;
     }
 
-    /* Header */
+    /* ==========================================================================
+       HEADER BARU DENGAN REALISTIC EQUALIZER (BAR MUSIK ACAK)
+       ========================================================================== */
     .header {
       text-align: center;
       margin-bottom: 30px;
-      padding: 20px;
-      background: white;
+      padding: 40px 20px;
       border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      background-color: #0d1117; /* Background gelap ala studio musik */
+    }
+
+    /* Wadah utama untuk menampung bar musik di latar belakang */
+    .music-equalizer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around; /* Menyebar rata dari kiri ke kanan */
+      align-items: flex-end; /* Bar tumbuh dari bawah ke atas */
+      padding: 0 10px;
+      opacity: 0.25; /* Dibuat transparan agar teks di depan tetap kontras */
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Gaya dasar untuk setiap batang equalizer */
+    .bar {
+      width: 4%; /* Menyesuaikan lebar bar agar muat dalam container */
+      max-width: 15px;
+      background: linear-gradient(to top, #c40000, #e60000, #ff4d4d);
+      border-radius: 3px 3px 0 0;
+      height: 10px; /* Tinggi minimum saat diam */
+      animation: bounceBar 1s ease-in-out infinite alternate;
+    }
+
+    /* Variasi tinggi acak & durasi animasi yang berbeda agar jalannya tidak beraturan */
+    .bar:nth-child(1)  { animation-duration: 0.6s; height: 30%; }
+    .bar:nth-child(2)  { animation-duration: 0.4s; height: 65%; }
+    .bar:nth-child(3)  { animation-duration: 0.7s; height: 40%; }
+    .bar:nth-child(4)  { animation-duration: 0.5s; height: 85%; }
+    .bar:nth-child(5)  { animation-duration: 0.8s; height: 20%; }
+    .bar:nth-child(6)  { animation-duration: 0.3s; height: 70%; }
+    .bar:nth-child(7)  { animation-duration: 0.65s; height: 50%; }
+    .bar:nth-child(8)  { animation-duration: 0.45s; height: 95%; }
+    .bar:nth-child(9)  { animation-duration: 0.75s; height: 35%; }
+    .bar:nth-child(10) { animation-duration: 0.55s; height: 60%; }
+    .bar:nth-child(11) { animation-duration: 0.35s; height: 80%; }
+    .bar:nth-child(12) { animation-duration: 0.7s; height: 45%; }
+    .bar:nth-child(13) { animation-duration: 0.5s; height: 90%; }
+    .bar:nth-child(14) { animation-duration: 0.6s; height: 25%; }
+    .bar:nth-child(15) { animation-duration: 0.4s; height: 75%; }
+
+    /* Aturan Animasi Naik-Turun Batang Musik */
+    @keyframes bounceBar {
+      0% {
+        transform: scaleY(0.2);
+      }
+      50% {
+        transform: scaleY(1.1); /* Efek sentakan musik */
+      }
+      100% {
+        transform: scaleY(0.4);
+      }
+    }
+
+    /* Memastikan konten teks berada aman di atas animasi bar musik */
+    .header-content {
+      position: relative;
+      z-index: 2;
     }
 
     .title {
-      font-size: 26px;
-      color: #e60000;
+      font-size: 36px;
       margin-bottom: 8px;
-      font-weight: 700;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #a69898;
+      text-shadow: 0 0 15px rgba(230, 0, 0, 0.8);
     }
 
     .subtitle {
       font-size: 15px;
-      color: #666;
+      color: #cbd5e1;
       line-height: 1.5;
     }
 
@@ -170,7 +238,7 @@
     .btn {
       display: block;
       width: 100%;
-      background: linear-gradient(135deg, #e60000 0%, #c40000 100%);
+      background: linear-gradient(135deg, #161414 0%, #1a4692 100%);
       color: white;
       padding: 14px;
       border-radius: 10px;
@@ -247,7 +315,7 @@
       }
 
       .title {
-        font-size: 32px;
+        font-size: 42px;
       }
 
       .section-title {
@@ -261,11 +329,11 @@
       }
 
       .header {
-        padding: 16px;
+        padding: 35px 16px;
       }
 
       .title {
-        font-size: 22px;
+        font-size: 32px;
       }
 
       .subtitle {
@@ -302,7 +370,6 @@
     .icon-promo::before {
       content: "🚨";
       margin-right: 4px;
-      
     }
   </style>
 </head>
@@ -310,44 +377,53 @@
 
   <div class="container">
     
-    <!-- Header -->
     <div class="header">
-      <div class="title">Paket Murah <strong>Telkomsel</strong></div>
-      <div class="subtitle">Nikmati akses internet dengan VPN terbaik</div>
+      <div class="music-equalizer">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      
+      <div class="header-content">
+        <div class="title">♌︎-Tech</div>
+        <div class="subtitle">Nikmati akses internet dengan VPN terbaik</div>
+      </div>
     </div>
 
-    <!-- CORS Alert for local testing -->
     <div id="cors-warning" style="display: none; background: #fff8e1; border-left: 4px solid #ffb300; padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; font-size: 13px; color: #5d4037; line-height: 1.5; box-shadow: 0 1px 3px rgba(0,0,0,0.05); font-family: sans-serif;">
       ⚠️ <strong>Membuka File Secara Lokal (Offline):</strong> Anda membuka halaman ini langsung dari file komputer. Perubahan di <code>database.json</code> hanya akan terlihat jika halaman dijalankan menggunakan web server lokal (seperti ekstensi <strong>Live Server</strong> di VS Code). Halaman ini saat ini menampilkan data cadangan bawaan agar tetap berfungsi dengan baik.
     </div>
 
-    <!-- Paket MyTelkomsel -->
     <h2 class="section-title">📱 Paket via MyTelkomsel</h2>
     
     <div class="package-grid" id="mytelkomsel-list">
-      <!-- Paket MyTelkomsel akan dimuat secara dinamis -->
-    </div>
+      </div>
 
-    <!-- Paket Jasa Tembak -->
     <h2 class="section-title">🎯 Paket via Jasa Tembak</h2>
     
     <div id="jasa-tembak-list">
-      <!-- Paket Jasa Tembak akan dimuat secara dinamis -->
-    </div>
+      </div>
 
-    <!-- Paket VPN -->
     <h2 class="section-title">🔒 Paket VPN Premium</h2>
     
     <div id="vpn-premium-list">
-      <!-- Paket VPN akan dimuat secara dinamis -->
-    </div>
+      </div>
 
-    <!-- Aplikasi VPN -->
     <h2 class="section-title">📲 Aplikasi VPN</h2>
     <div id="aplikasi-vpn-list">
-      <!-- Aplikasi VPN akan dimuat secara dinamis -->
-    </div>
-    <!-- QR Generator -->
+      </div>
     <h2 class="section-title">🔳 QR Code Generator</h2>
 
     <div class="service-card">
@@ -375,7 +451,7 @@
           padding:14px;
           border:none;
           border-radius:10px;
-          background:linear-gradient(135deg,#e60000 0%,#c40000 100%);
+          background:linear-gradient(135deg, #000000 0%, #4d4a4a 100%);
           color:white;
           font-weight:600;
           cursor:pointer;
@@ -395,7 +471,6 @@
       ></div>
     </div>
 
-    <!-- Library QR -->
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
 
     <script>
@@ -580,7 +655,6 @@
     // Jalankan loadDatabase ketika DOM telah dimuat
     document.addEventListener("DOMContentLoaded", loadDatabase);
     </script>
-    <!-- Footer -->
     <div class="footer">
       <div class="note">
         ⚠️ <strong>Penting:</strong> Paket Telkomsel ini hanya dapat digunakan dengan VPN
