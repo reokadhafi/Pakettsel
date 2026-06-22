@@ -49,6 +49,16 @@
       "quota_badge": "sekali beli",
       "link": "https://my.telkomsel.com/app/package-details/6a1abf0322294e59fe3790bb0bbb509c",
       "aktif": false
+    },
+    {
+      "nama": "Nelpon 1000m",
+      "harga": "Rp22.000",
+      "masa_aktif": "14 Hari",
+      "kuota": "1000 Menit",
+      "badge": "Promo",
+      "quota_badge": "sekali beli",
+      "link": "https://my.telkomsel.com/app/package-details/ffa8dcbf4dcd5e04a98307fc5d32e96f89257156f504ec8ee5d1812ad4b0b21c",
+      "aktif": true
     }
   ],
   "paket_jasa_tembak": [
