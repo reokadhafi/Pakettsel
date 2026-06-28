@@ -35,20 +35,20 @@
       "harga": "Rp5.000",
       "masa_aktif": "30 Hari",
       "kuota": "300 Menit",
-      "badge": "",
-      "quota_badge": "sekali beli",
+      "badge": "All Operator",
+      "quota_badge": "",
       "link": "https://my.telkomsel.com/app/package-details/ad3920ab381ba6295280c1f7296a70cf",
-      "aktif": false
+      "aktif": true
     },
     {
       "nama": "Nelpon 600m",
       "harga": "Rp10.000",
       "masa_aktif": "30 Hari",
       "kuota": "600 Menit",
-      "badge": "",
-      "quota_badge": "sekali beli",
+      "badge": "All Operator",
+      "quota_badge": "",
       "link": "https://my.telkomsel.com/app/package-details/6a1abf0322294e59fe3790bb0bbb509c",
-      "aktif": false
+      "aktif": true
     },
     {
       "nama": "Nelpon 1000m",
