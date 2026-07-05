@@ -38,7 +38,7 @@
       "badge": "All Operator",
       "quota_badge": "",
       "link": "https://my.telkomsel.com/app/package-details/bc34b71381be91eda873b74ee529a40b",
-      "aktif": true
+      "aktif": false 
     },
     {
       "nama": "Nelpon 600m",
@@ -48,7 +48,7 @@
       "badge": "All Operator",
       "quota_badge": "",
       "link": "https://my.telkomsel.com/app/package-details/57b8c24d63ee7162b33d3bf6c5bd222b",
-      "aktif": true
+      "aktif": false 
     },
     {
       "nama": "Nelpon 1000m",
@@ -58,7 +58,7 @@
       "badge": "All Operator",
       "quota_badge": "",
       "link": "https://my.telkomsel.com/app/package-details/d74723cba7c68676bf506468d3c15755",
-      "aktif": true
+      "aktif": false 
     }
   ],
   "paket_jasa_tembak": [
