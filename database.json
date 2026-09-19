@@ -61,6 +61,20 @@
       "aktif": false 
     }
   ],
+  "menu_tembak_paket": [
+    {
+      "id": "gmx",
+      "nama": "Paket GMX 15GB 30 Hari Rp 20.000",
+      "base_link": "https://www.telkomsel.com/shops/digital-checkout/e46d70a1c57e3e035e0b561f7c472e8f7b80e0878ce5642e0c09cff647c43e8e38d58fb4?msisdn={NOMOR}&type=package&category=Kamu%20Banget&roaming=&service=&sort=lowest-price&minPrice=&maxPrice=",
+      "aktif": true
+    },
+    {
+      "id": "nelpon",
+      "nama": "Paket Nelpon 200 menit All operator 30 hari Rp 35.000",
+      "base_link": "https://www.telkomsel.com/shops/digital-checkout/c98a7f2f5eac3fdee28540d4ceb6860aa658c72416bf1b547de10595a8341e044e98bb14cab9db7fb7?msisdn={NOMOR}&type=package&category=Telepon%20%26%20SMS&roaming=&service=&sort=lowest-price&minPrice=&maxPrice=",
+      "aktif": true
+    }
+  ],
   "paket_jasa_tembak": [
     {
       "nama": "Kuota 15GB",
@@ -68,7 +82,7 @@
       "harga": "Rp25.000",
       "masa_aktif": "30 Hari",
       "link": "http://lynk.id/reokadhafi/zz2wdv619r2o/",
-      "aktif": true
+      "aktif": false
     }
   ],
   "paket_vpn_premium": [
@@ -78,7 +92,7 @@
       "harga": "Rp20.000",
       "masa_aktif": "30 Hari",
       "link": "http://lynk.id/reokadhafi/89oqjko79o0o/",
-      "aktif": true
+      "aktif": false
     }
   ],
   "aplikasi_vpn": [
