@@ -64,33 +64,57 @@
   "menu_tembak_paket": [
     {
       "id": "gmx",
-      "nama": "Paket GMX 15GB 30 Hari Rp 20.000",
+      "nama": "Paket GMX 15GB",
+      "kuota": "15 GB",
+      "harga": "Rp20.000",
+      "masa_aktif": "30 Hari",
       "base_link": "https://www.telkomsel.com/shops/digital-checkout/e46d70a1c57e3e035e0b561f7c472e8f7b80e0878ce5642e0c09cff647c43e8e38d58fb4?msisdn={NOMOR}&type=package&category=Kamu%20Banget&roaming=&service=&sort=lowest-price&minPrice=&maxPrice=",
       "aktif": true
     },
     {
       "id": "nelpon300",
-      "nama": "Paket Nelpon 300 menit All operator 30 hari Rp 5.000",
+      "nama": "Paket Nelpon 300 menit",
+      "kuota": "300 Menit",
+      "harga": "Rp5.000",
+      "masa_aktif": "30 Hari",
       "base_link": "https://www.telkomsel.com/shops/digital-checkout/9e29248c1b57ad992654b00e76f1111e35ea9821c53b819ec4f56f3c3439d235973d1dcf116aff0902?msisdn={NOMOR}&type=package&category=Telepon%20%26%20SMS&roaming=&service=&sort=lowest-price&minPrice=&maxPrice=",
+      "aktif": false
+    },
+    {
+      "id": "nelpon600",
+      "nama": "Paket Nelpon 600 menit",
+      "kuota": "600 Menit",
+      "harga": "Rp10.000",
+      "masa_aktif": "30 Hari",
+      "base_link": "https://www.telkomsel.com/shops/digital-checkout/d81ec7ae3e564f8b695cb6fa8416e07399b208f05a75185426cb65dd48b57cf51cee9bee0bef6be3f7?msisdn={NOMOR}&type=package&category=Telepon%20%26%20SMS&roaming=&service=&sort=lowest-price&minPrice=&maxPrice=",
+      "aktif": false
+    },
+    {
+      "id": "nelpon1000",
+      "nama": "Paket Nelpon 1000 menit",
+      "kuota": "1000 Menit",
+      "harga": "Rp16.000",
+      "masa_aktif": "30 Hari",
+      "base_link": "https://www.telkomsel.com/shops/digital-checkout/af8c822df52db28874af5061a63fcd4a07525a0b594d0a1c3ea4d8447fdb451d4562a2dbb4bec06c95?msisdn={NOMOR}&type=package&category=Telepon%20%26%20SMS&roaming=&service=&sort=lowest-price&minPrice=&maxPrice=",
+      "aktif": false
+    },
+    {
+      "id": "nelpon200",
+      "nama": "Paket Nelpon 200 menit",
+      "kuota": "200 Menit",
+      "harga": "Rp35.000",
+      "masa_aktif": "30 Hari",
+      "base_link": "https://www.telkomsel.com/shops/digital-checkout/c98a7f2f5eac3fdee28540d4ceb6860aa658c72416bf1b547de10595a8341e044e98bb14cab9db7fb7?msisdn={NOMOR}&type=package&category=Telepon%20%26%20SMS&roaming=&service=&sort=lowest-price&minPrice=&maxPrice=",
       "aktif": true
     },
     {
       "id": "nelpon600",
-      "nama": "Paket Nelpon 600 menit All operator 30 hari Rp 10.000",
-      "base_link": "https://www.telkomsel.com/shops/digital-checkout/d81ec7ae3e564f8b695cb6fa8416e07399b208f05a75185426cb65dd48b57cf51cee9bee0bef6be3f7?msisdn={NOMOR}&type=package&category=Telepon%20%26%20SMS&roaming=&service=&sort=lowest-price&minPrice=&maxPrice=",
+      "nama": "Paket Nelpon 600 menit",
+      "kuota": "600 Menit",
+      "harga": "Rp50.000",
+      "masa_aktif": "30 Hari",
+      "base_link": "https://www.telkomsel.com/shops/digital-checkout/220e5bf40588b33440c752d34417ef8b5b791a165f915e1dd4c798d93be097a0956ce3414df69321bf?msisdn={NOMOR}&type=package&category=Telepon%20%26%20SMS&roaming=&service=&sort=lowest-price&minPrice=&maxPrice=",
       "aktif": true
-    },
-    {
-      "id": "nelpon1000",
-      "nama": "Paket Nelpon 1000 menit All operator 30 hari Rp 16.000",
-      "base_link": "https://www.telkomsel.com/shops/digital-checkout/af8c822df52db28874af5061a63fcd4a07525a0b594d0a1c3ea4d8447fdb451d4562a2dbb4bec06c95?msisdn={NOMOR}&type=package&category=Telepon%20%26%20SMS&roaming=&service=&sort=lowest-price&minPrice=&maxPrice=",
-      "aktif": true
-    },
-    {
-      "id": "nelpon200",
-      "nama": "Paket Nelpon 200 menit All operator 30 hari Rp 35.000",
-      "base_link": "https://www.telkomsel.com/shops/digital-checkout/c98a7f2f5eac3fdee28540d4ceb6860aa658c72416bf1b547de10595a8341e044e98bb14cab9db7fb7?msisdn={NOMOR}&type=package&category=Telepon%20%26%20SMS&roaming=&service=&sort=lowest-price&minPrice=&maxPrice=",
-      "aktif": false
     }
   ],
   "paket_jasa_tembak": [
