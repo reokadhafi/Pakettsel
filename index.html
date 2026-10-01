@@ -2,607 +2,477 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Digital Produk & Paket Telkomsel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan Digital & Tembak Paket Telkomsel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #e60000;
+      --primary-dark: #c40000;
+      --primary-light: #fff1f1;
+      --primary-gradient: linear-gradient(135deg, #e60000 0%, #b80000 100%);
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-color: #f8fafc;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* Buka Kunci Scroll Seluruh Layar HP */
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #c8ccd1 0%, #e8ebef 100%);
-      color: #333;
-      padding: 20px 16px;
-      min-height: 100vh;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      padding: 16px 12px;
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 580px;
       margin: 0 auto;
     }
 
-    .header {
-      text-align: center;
-      margin-bottom: 30px;
-      padding: 40px 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    /* Header Hero */
+    .header-hero {
+      background: var(--primary-gradient);
+      color: white;
+      border-radius: 20px;
+      padding: 20px;
       position: relative;
       overflow: hidden;
-      background-color: #0d1117;
+      box-shadow: 0 8px 24px rgba(230, 0, 0, 0.25);
+      margin-bottom: 16px;
     }
 
-    .music-equalizer {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    .hero-content {
       display: flex;
-      justify-content: space-around;
-      align-items: flex-end;
-      padding: 0 10px;
-      opacity: 0.25;
-      pointer-events: none;
-      z-index: 1;
+      align-items: center;
+      gap: 14px;
     }
 
-    .bar {
-      width: 4%;
-      max-width: 15px;
-      background: linear-gradient(to top, #c40000, #e60000, #ff4d4d);
-      border-radius: 3px 3px 0 0;
-      height: 10px;
-      animation: bounceBar 1s ease-in-out infinite alternate;
-    }
-
-    .bar:nth-child(1)  { animation-duration: 0.6s; height: 30%; }
-    .bar:nth-child(2)  { animation-duration: 0.4s; height: 65%; }
-    .bar:nth-child(3)  { animation-duration: 0.7s; height: 40%; }
-    .bar:nth-child(4)  { animation-duration: 0.5s; height: 85%; }
-    .bar:nth-child(5)  { animation-duration: 0.8s; height: 20%; }
-    .bar:nth-child(6)  { animation-duration: 0.3s; height: 70%; }
-    .bar:nth-child(7)  { animation-duration: 0.65s; height: 50%; }
-    .bar:nth-child(8)  { animation-duration: 0.45s; height: 95%; }
-    .bar:nth-child(9)  { animation-duration: 0.75s; height: 35%; }
-    .bar:nth-child(10) { animation-duration: 0.55s; height: 60%; }
-    .bar:nth-child(11) { animation-duration: 0.35s; height: 80%; }
-    .bar:nth-child(12) { animation-duration: 0.7s; height: 45%; }
-    .bar:nth-child(13) { animation-duration: 0.5s; height: 90%; }
-    .bar:nth-child(14) { animation-duration: 0.6s; height: 25%; }
-    .bar:nth-child(15) { animation-duration: 0.4s; height: 75%; }
-
-    @keyframes bounceBar {
-      0% { transform: scaleY(0.2); }
-      50% { transform: scaleY(1.1); }
-      100% { transform: scaleY(0.4); }
-    }
-
-    .header-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .title {
-      font-size: 36px;
-      margin-bottom: 8px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      color: #a69898;
-      text-shadow: 0 0 15px rgba(230, 0, 0, 0.8);
-    }
-
-    .subtitle {
-      font-size: 15px;
-      color: #cbd5e1;
-      line-height: 1.5;
-    }
-
-    .section-title {
-      text-align: center;
-      color: #412828;
-      font-size: 20px;
-      margin: 30px 0 20px;
-      font-weight: 600;
-    }
-
-    .package-grid {
-      display: grid;
-      gap: 16px;
-      margin-bottom: 30px;
-    }
-
-    .package-card {
-      background: white;
+    .hero-icon {
+      font-size: 28px;
+      background: rgba(255,255,255,0.2);
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-      border: 1px solid #f0f0f0;
-      transition: all 0.3s ease;
+      backdrop-filter: blur(4px);
+      flex-shrink: 0;
     }
 
-    .package-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(230,0,0,0.12);
+    .hero-text h1 {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 2px;
     }
 
-    .package-header {
+    .hero-text p {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    /* Navigation Tabs Utama */
+    .main-nav-tabs {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      margin-bottom: 16px;
+      scrollbar-width: none;
+    }
+
+    .main-nav-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-tab-btn {
+      flex: 1;
+      min-width: max-content;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      background: white;
+      font-size: 13px;
+      font-weight: 700;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .nav-tab-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(230, 0, 0, 0.2);
+    }
+
+    /* Tab Content Section */
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Input Phone Card */
+    .input-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 16px;
+    }
+
+    .input-card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
-      padding-bottom: 12px;
-      border-bottom: 2px solid #f5f5f5;
-    }
-
-    .package-name {
-      font-size: 18px;
-      font-weight: 600;
-      color: #333;
-    }
-
-    .package-price {
-      font-size: 20px;
-      font-weight: 700;
-      color: #e60000;
-    }
-
-    .package-details {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-    }
-
-    .detail-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      color: #666;
-    }
-
-    .btn-beli {
-      display: block;
-      width: 100%;
-      background: linear-gradient(135deg, #e60000 0%, #c40000 100%);
-      color: white;
-      padding: 14px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(230,0,0,0.2);
-      font-size: 15px;
-      border: none;
-      cursor: pointer;
       margin-bottom: 10px;
     }
 
-    .btn-beli:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(230,0,0,0.3);
+    .input-card-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
-    .btn-beli:last-child {
-      margin-bottom: 0;
+    .badge-telkomsel {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #fef2f2;
+      color: #e60000;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      border: 1px solid #fee2e2;
     }
 
-    .service-card {
-      background: white;
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 16px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-      border: 1px solid #f0f0f0;
-    }
-
-    .service-card h2 {
-      font-size: 18px;
-      color: #333;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-
-    .service-card p {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    .input-nomor {
-      width: 100%;
-      padding: 14px;
+    .phone-input-wrapper {
+      display: flex;
+      align-items: center;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
       border-radius: 10px;
-      border: 1px solid #ddd;
-      margin-bottom: 14px;
-      font-size: 14px;
+      padding: 2px 8px 2px 12px;
+    }
+
+    .phone-prefix {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #475569;
+      padding-right: 8px;
+      border-right: 1px solid #e2e8f0;
+    }
+
+    .phone-input {
+      width: 100%;
+      border: none;
+      background: transparent;
+      padding: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
       outline: none;
     }
 
-    .input-nomor:focus {
-      border-color: #e60000;
+    /* DAFTAR KARTU PAKET */
+    .cards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    .btn {
-      display: block;
-      width: 100%;
-      background: linear-gradient(135deg, #161414 0%, #1a4692 100%);
-      color: white;
-      padding: 14px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      text-align: center;
-      transition: all 0.3s ease;
-      margin-bottom: 10px;
-      font-size: 14px;
-      box-shadow: 0 2px 8px rgba(230,0,0,0.2);
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(230,0,0,0.3);
-    }
-
-    .btn:last-child {
-      margin-bottom: 0;
-    }
-
-    .footer {
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .note {
-      background: white;
+    .pkg-card {
+      background: #ffffff;
+      border-radius: 16px;
       padding: 16px;
-      border-radius: 10px;
-      font-size: 13px;
-      color: #666;
-      margin-bottom: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-      line-height: 1.6;
+      border: 1.5px solid #e2e8f0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+      position: relative;
     }
 
-    .note a {
-      color: #e60000;
-      text-decoration: none;
+    .badge-top {
+      position: absolute;
+      top: -10px;
+      right: 14px;
+      background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+      color: white;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+    }
+
+    .pkg-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .pkg-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: #fef2f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .pkg-info {
+      flex: 1;
+    }
+
+    .pkg-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .pkg-desc {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    .pkg-tags-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .pkg-spec-pill {
+      background: #f1f5f9;
+      color: #334155;
+      font-size: 11px;
       font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+
+    .pkg-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .pkg-price-val {
+      font-size: 17px;
+      font-weight: 800;
+      color: #e60000;
+    }
+
+    .btn-action {
+      background: var(--primary-gradient);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 4px;
     }
 
-    .copyright {
-      margin-top: 20px;
-      font-size: 13px;
-      color: #999;
+    /* Menu Card Box (Tools) */
+    .menu-box {
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 12px;
     }
 
-    .badge {
-      display: inline-block;
-      background: #fff3f3;
-      color: #e60000;
-      padding: 4px 12px;
-      border-radius: 20px;
+    .menu-box h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #0f172a;
+    }
+
+    .menu-box p {
+      font-size: 12px;
+      color: #64748b;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .link-btn {
+      display: block;
+      padding: 10px 14px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #1e293b;
       font-size: 12px;
       font-weight: 600;
-      margin-left: 8px;
+      margin-bottom: 8px;
     }
 
-    @media (min-width: 768px) {
-      .package-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .title { font-size: 42px; }
-      .section-title { font-size: 24px; }
+    .link-btn:hover {
+      background: #f1f5f9;
     }
 
-    @media (max-width: 480px) {
-      body { padding: 16px 12px; }
-      .header { padding: 35px 16px; }
-      .title { font-size: 32px; }
-      .subtitle { font-size: 14px; }
-      .package-card { padding: 16px; }
-      .package-name { font-size: 16px; }
-      .package-price { font-size: 18px; }
-      .service-card { padding: 20px; }
+    .qr-input-group {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
     }
 
-    .icon-calendar::before { content: "📅"; margin-right: 4px; }
-    .icon-data::before { content: "📊"; margin-right: 4px; }
+    .qr-input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 24px;
+      line-height: 1.5;
+    }
+
+    .footer a {
+      color: #e60000;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .bottom-spacer {
+      height: 280px;
+      width: 100%;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
-    
-    <div class="header">
-      <div class="music-equalizer">
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-      </div>
-      
-      <div class="header-content">
-        <div class="title">♌︎-Tech</div>
-        <div class="subtitle">Nikmati akses internet dengan VPN terbaik</div>
+
+    <!-- Header Hero -->
+    <div class="header-hero">
+      <div class="hero-content">
+        <div class="hero-icon">🚀</div>
+        <div class="hero-text">
+          <h1>Layanan Digital Telkomsel</h1>
+          <p>Beli paket MyTelkomsel, Tembak Nomor, Aplikasi VPN & QR Code</p>
+        </div>
       </div>
     </div>
 
-    <div id="cors-warning" style="display: none; background: #fff8e1; border-left: 4px solid #ffb300; padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; font-size: 13px; color: #5d4037; line-height: 1.5; box-shadow: 0 1px 3px rgba(0,0,0,0.05); font-family: sans-serif;">
-      ⚠️ <strong>Membuka File Secara Lokal (Offline):</strong> Anda membuka halaman ini langsung dari file komputer. Perubahan di <code>database.json</code> hanya akan terlihat jika halaman dijalankan menggunakan web server lokal (seperti ekstensi <strong>Live Server</strong> di VS Code).
+    <!-- Main Navigation Tabs -->
+    <div class="main-nav-tabs">
+      <button class="nav-tab-btn active" onclick="switchTab('tab-mytelkomsel', this)">📱 MyTelkomsel</button>
+      <button class="nav-tab-btn" onclick="switchTab('tab-tembak', this)">🎯 Tembak Paket</button>
+      <button class="nav-tab-btn" onclick="switchTab('tab-vpn', this)">🔒 Aplikasi VPN</button>
+      <button class="nav-tab-btn" onclick="switchTab('tab-qr', this)">🔳 QR Code</button>
     </div>
 
-    <!-- Seksi Dynamic Paket -->
-    <div id="section-mytelkomsel">
-      <h2 class="section-title">📱 Paket via MyTelkomsel</h2>
-      <div class="package-grid" id="mytelkomsel-list"></div>
-    </div>
-
-    <!-- Menu Tembak Paket Unifikasi -->
-    <div id="section-menu-tembak">
-      <h2 class="section-title">🚀 Tembak Paket Telkomsel</h2>
-      <div class="service-card">
-        <h2>Masukkan Nomor Tujuan</h2>
-        <p>Isi nomor Telkomsel Anda untuk melanjutkan proses tembak paket.</p>
-        <input 
-          type="number" 
-          id="msisdn-input-utama" 
-          class="input-nomor" 
-          placeholder="Contoh: 081247888889"
-        />
-        <div id="menu-tembak-buttons"></div>
+    <!-- TAB 1: VIA MYTELKOMSEL (TANPA INPUT NOMOR) -->
+    <div id="tab-mytelkomsel" class="tab-content active">
+      <div class="cards-list" id="mytelkomsel-container">
+        <!-- Rendered via JS -->
       </div>
     </div>
-    
-    <div id="section-jasa-tembak">
-      <h2 class="section-title">🎯 Paket via Jasa Tembak</h2>
-      <div id="jasa-tembak-list"></div>
+
+    <!-- TAB 2: TEMBAK PAKET (INPUT NOMOR) -->
+    <div id="tab-tembak" class="tab-content">
+      <div class="input-card">
+        <div class="input-card-header">
+          <span class="input-card-title">Nomor Telkomsel Tujuan</span>
+          <span class="badge-telkomsel">● Telkomsel</span>
+        </div>
+        <div class="phone-input-wrapper">
+          <div class="phone-prefix">
+            <span>📞</span>
+          </div>
+          <input 
+            type="tel" 
+            id="msisdn-input" 
+            class="phone-input" 
+            placeholder="Contoh: 081247888889"
+            value=""
+          />
+        </div>
+      </div>
+
+      <div class="cards-list" id="tembak-container">
+        <!-- Rendered via JS -->
+      </div>
     </div>
 
-    <div id="section-vpn-premium">
-      <h2 class="section-title">🔒 Paket VPN Premium</h2>
-      <div id="vpn-premium-list"></div>
+    <!-- TAB 3: APLIKASI VPN -->
+    <div id="tab-vpn" class="tab-content">
+      <div class="menu-box">
+        <h3>📲 Clash Meta for Android</h3>
+        <p>Aplikasi VPN open-source terbaik untuk mengaktifkan paket internet tertentu secara optimal.</p>
+        <div id="vpn-links-container">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
     </div>
 
-    <div id="section-aplikasi-vpn">
-      <h2 class="section-title">📲 Aplikasi VPN</h2>
-      <div id="aplikasi-vpn-list"></div>
+    <!-- TAB 4: QR CODE GENERATOR -->
+    <div id="tab-qr" class="tab-content">
+      <div class="menu-box">
+        <h3>🔳 QR Code Generator</h3>
+        <p>Buat kode QR secara instan dari link checkout paket atau tautan lainnya.</p>
+        <div class="qr-input-group">
+          <input type="text" id="qrLinkInput" class="qr-input" placeholder="Tempel tautan / link di sini..." />
+          <button class="btn-action" onclick="generateQRCode()">Generate</button>
+        </div>
+        <div id="qrcode-output" style="display:flex; justify-content:center; padding:12px 0;"></div>
+      </div>
     </div>
 
-    <h2 class="section-title">🔳 QR Code Generator</h2>
-
-    <div class="service-card">
-      <h2>Buat QR dari Link</h2>
-      <p>Masukkan link lalu generate QR code secara otomatis langsung di browser.</p>
-
-      <input 
-        type="text" 
-        id="linkInput"
-        placeholder="Masukkan link..."
-        class="input-nomor"
-      >
-
-      <button 
-        onclick="generateQR()"
-        style="width:100%; padding:14px; border:none; border-radius:10px; background:linear-gradient(135deg, #000000 0%, #4d4a4a 100%); color:white; font-weight:600; cursor:pointer; font-size:14px;"
-      >
-        🔳 Buat QR Code
-      </button>
-
-      <div id="qrcode" style="margin-top:20px; display:flex; justify-content:center;"></div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
-
-    <script>
-    let globalTembakLinks = {};
-
-    function generateQR() {
-      const link = document.getElementById("linkInput").value;
-      if (!link) {
-        alert("Masukkan link dulu");
-        return;
-      }
-      document.getElementById("qrcode").innerHTML = "";
-      new QRCode(document.getElementById("qrcode"), {
-        text: link,
-        width: 220,
-        height: 220
-      });
-    }
-
-    function eksekusiTembakPaket(idPaket) {
-      const msisdn = document.getElementById('msisdn-input-utama').value.trim();
-      if (!msisdn) {
-        alert("Harap masukkan nomor HP tujuan terlebih dahulu!");
-        return;
-      }
-      
-      const baseLink = globalTembakLinks[idPaket];
-      if (baseLink) {
-        const targetUrl = baseLink.replace('{NOMOR}', msisdn);
-        window.open(targetUrl, '_blank');
-      }
-    }
-
-    function renderPackages(data) {
-      // 1. MyTelkomsel
-      const secMyTelkomsel = document.getElementById("section-mytelkomsel");
-      const myTelkomselContainer = document.getElementById("mytelkomsel-list");
-      if (myTelkomselContainer && data.paket_mytelkomsel) {
-        myTelkomselContainer.innerHTML = "";
-        const activePkgs = data.paket_mytelkomsel.filter(p => p.aktif);
-        if (activePkgs.length === 0) {
-          if (secMyTelkomsel) secMyTelkomsel.style.display = "none";
-        } else {
-          if (secMyTelkomsel) secMyTelkomsel.style.display = "block";
-          activePkgs.forEach(pkg => {
-            const badgeHTML = pkg.badge ? `<span class="badge">${pkg.badge}</span>` : "";
-            const quotaBadgeHTML = pkg.quota_badge ? `<span class="badge">${pkg.quota_badge}</span>` : "";
-            const card = document.createElement("div");
-            card.className = "package-card";
-            card.innerHTML = `
-              <div class="package-header">
-                <div class="package-name">${pkg.nama}${badgeHTML}</div>
-                <div class="package-price">${pkg.harga}</div>
-              </div>
-              <div class="package-details">
-                <div class="detail-item"><span class="icon-calendar"></span><span>${pkg.masa_aktif}</span></div>
-                <div class="detail-item"><span class="icon-data"></span><span>${pkg.kuota}</span>${quotaBadgeHTML}</div>
-              </div>
-              <a class="btn-beli" href="${pkg.link}" target="_blank" rel="noopener">Beli Sekarang</a>
-            `;
-            myTelkomselContainer.appendChild(card);
-          });
-        }
-      }
-
-      // 2. Menu Tembak Paket
-      const secMenuTembak = document.getElementById("section-menu-tembak");
-      const tembakButtonsContainer = document.getElementById("menu-tembak-buttons");
-      if (tembakButtonsContainer && data.menu_tembak_paket) {
-        tembakButtonsContainer.innerHTML = "";
-        const activePkgs = data.menu_tembak_paket.filter(p => p.aktif);
-        
-        if (activePkgs.length === 0) {
-          if (secMenuTembak) secMenuTembak.style.display = "none";
-        } else {
-          if (secMenuTembak) secMenuTembak.style.display = "block";
-          
-          activePkgs.forEach(pkg => {
-            globalTembakLinks[pkg.id] = pkg.base_link;
-            const btn = document.createElement("button");
-            btn.className = "btn-beli"; // Menggunakan class btn-beli
-            btn.innerHTML = `🚀 ${pkg.nama}`;
-            btn.onclick = () => eksekusiTembakPaket(pkg.id);
-            tembakButtonsContainer.appendChild(btn);
-          });
-        }
-      }
-
-      // 3. Jasa Tembak
-      const secJasaTembak = document.getElementById("section-jasa-tembak");
-      const jasaTembakContainer = document.getElementById("jasa-tembak-list");
-      if (jasaTembakContainer && data.paket_jasa_tembak) {
-        jasaTembakContainer.innerHTML = "";
-        const activePkgs = data.paket_jasa_tembak.filter(p => p.aktif);
-        if (activePkgs.length === 0) {
-          if (secJasaTembak) secJasaTembak.style.display = "none";
-        } else {
-          if (secJasaTembak) secJasaTembak.style.display = "block";
-          activePkgs.forEach(pkg => {
-            const card = document.createElement("div");
-            card.className = "service-card";
-            card.innerHTML = `
-              <h2>${pkg.nama}</h2>
-              <p>${pkg.deskripsi}</p>
-              <a class="btn" href="${pkg.link}" target="_blank" rel="noopener">💳 Beli ${pkg.harga} - ${pkg.masa_aktif}</a>
-            `;
-            jasaTembakContainer.appendChild(card);
-          });
-        }
-      }
-
-      // 4. VPN Premium
-      const secVpnPremium = document.getElementById("section-vpn-premium");
-      const vpnPremiumContainer = document.getElementById("vpn-premium-list");
-      if (vpnPremiumContainer && data.paket_vpn_premium) {
-        vpnPremiumContainer.innerHTML = "";
-        const activePkgs = data.paket_vpn_premium.filter(p => p.aktif);
-        if (activePkgs.length === 0) {
-          if (secVpnPremium) secVpnPremium.style.display = "none";
-        } else {
-          if (secVpnPremium) secVpnPremium.style.display = "block";
-          activePkgs.forEach(pkg => {
-            const card = document.createElement("div");
-            card.className = "service-card";
-            card.innerHTML = `
-              <h2>${pkg.nama}</h2>
-              <p>${pkg.deskripsi}</p>
-              <a class="btn" href="${pkg.link}" target="_blank" rel="noopener">🚀 Beli VPN ${pkg.harga} - ${pkg.masa_aktif}</a>
-            `;
-            vpnPremiumContainer.appendChild(card);
-          });
-        }
-      }
-
-      // 5. Aplikasi VPN
-      const secAplikasiVpn = document.getElementById("section-aplikasi-vpn");
-      const aplikasiVpnContainer = document.getElementById("aplikasi-vpn-list");
-      if (aplikasiVpnContainer && data.aplikasi_vpn) {
-        aplikasiVpnContainer.innerHTML = "";
-        const activeApps = data.aplikasi_vpn.filter(app => app.aktif);
-        if (activeApps.length === 0) {
-          if (secAplikasiVpn) secAplikasiVpn.style.display = "none";
-        } else {
-          if (secAplikasiVpn) secAplikasiVpn.style.display = "block";
-          activeApps.forEach(app => {
-            const card = document.createElement("div");
-            card.className = "service-card";
-            let buttonsHTML = "";
-            if (app.links && app.links.length > 0) {
-              app.links.forEach(link => {
-                buttonsHTML += `<a class="btn" href="${link.url}" target="_blank" rel="noopener">${link.teks}</a>`;
-              });
-            }
-            card.innerHTML = `
-              <h2>${app.nama}</h2>
-              <p>${app.deskripsi}</p>
-              ${buttonsHTML}
-            `;
-            aplikasiVpnContainer.appendChild(card);
-          });
-        }
-      }
-    }
-
-    function renderError(message) {
-      const containers = ["mytelkomsel-list", "menu-tembak-buttons", "jasa-tembak-list", "vpn-premium-list", "aplikasi-vpn-list"];
-      containers.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) {
-          el.innerHTML = `
-            <div style="background: #ffebee; border-left: 4px solid #f44336; padding: 12px; border-radius: 8px; margin: 10px 0; font-size: 13px; color: #c62828; font-family: sans-serif;">
-              ⚠️ <strong>Error:</strong> Gagal memuat data dari <code>database.json</code>.
-            </div>
-          `;
-        }
-      });
-    }
-
-    async function loadDatabase() {
-      const isLocalFile = window.location.protocol === 'file:';
-      try {
-        const response = await fetch(`database.json?v=${Date.now()}`);
-        if (!response.ok) throw new Error('Gagal memuat database.json');
-        const data = await response.json();
-        renderPackages(data);
-      } catch (error) {
-        if (isLocalFile) {
-          const warningEl = document.getElementById('cors-warning');
-          if (warningEl) warningEl.style.display = 'block';
-        }
-        renderError(error.message);
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", loadDatabase);
-    </script>
-
+    <!-- Footer -->
     <div class="footer">
-      <div class="note">⚠️ <strong>Penting:</strong> Paket Telkomsel ini hanya dapat digunakan dengan VPN</div>
+      <div class="note">⚠️️ <strong>Penting:</strong> Paket Telkomsel ini hanya dapat digunakan dengan VPN</div>
       <div class="note">
         💬 Hubungi penyedia: 
         <a href="https://wa.me/6281247888889" target="_blank" rel="noopener">
@@ -613,7 +483,172 @@
       <div class="copyright">© 2025 Paket Telkomsel</div>
     </div>
 
+    <!-- Spacer agar paket paling bawah bisa terdorong ke atas visual HP -->
+    <div class="bottom-spacer"></div>
+
   </div>
-  
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+  <script>
+    let dbData = {
+      "paket_mytelkomsel": [],
+      "menu_tembak_paket": [],
+      "aplikasi_vpn": []
+    };
+
+    function switchTab(tabId, el) {
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.nav-tab-btn').forEach(b => b.classList.remove('active'));
+      
+      document.getElementById(tabId).classList.add('active');
+      el.classList.add('active');
+      
+      window.scrollTo({ top: 120, behavior: 'smooth' });
+    }
+
+    function getFormattedPhone() {
+      let raw = document.getElementById('msisdn-input').value.trim();
+      raw = raw.replace(/[^0-9]/g, '');
+      
+      // Jika nomor diawali '62', ubah menjadi '0' (contoh: 62812 -> 0812)
+      if (raw.startsWith('62')) {
+        return '0' + raw.substring(2);
+      }
+      
+      // Jika diawali angka '8', tambahkan '0' di depan (contoh: 812 -> 0812)
+      if (raw.startsWith('8')) {
+        return '0' + raw;
+      }
+      
+      return raw;
+    }
+
+    function renderMyTelkomsel() {
+      const container = document.getElementById('mytelkomsel-container');
+      container.innerHTML = "";
+      
+      const list = (dbData.paket_mytelkomsel || []).filter(p => p.aktif);
+      if (list.length === 0) {
+        container.innerHTML = "<p style='font-size:13px; color:#64748b;'>Tidak ada paket MyTelkomsel aktif.</p>";
+        return;
+      }
+
+      list.forEach(p => {
+        const badgeHtml = p.badge ? `<div class="badge-top">${p.badge}</div>` : "";
+        const card = document.createElement('div');
+        card.className = "pkg-card";
+        card.innerHTML = `
+          ${badgeHtml}
+          <div class="pkg-top">
+            <div class="pkg-avatar">📱</div>
+            <div class="pkg-info">
+              <div class="pkg-title">${p.nama}</div>
+              <div class="pkg-desc">Klik langsung untuk transaksi via aplikasi MyTelkomsel</div>
+            </div>
+          </div>
+          <div class="pkg-tags-row">
+            <span class="pkg-spec-pill">⚡ ${p.kuota}</span>
+            <span class="pkg-spec-pill">📅 ${p.masa_aktif}</span>
+          </div>
+          <div class="pkg-bottom">
+            <span class="pkg-price-val">${p.harga}</span>
+            <a href="${p.link}" target="_blank" rel="noopener" class="btn-action">Beli Langsung →</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function renderTembakPaket() {
+      const container = document.getElementById('tembak-container');
+      container.innerHTML = "";
+
+      const list = (dbData.menu_tembak_paket || []).filter(p => p.aktif);
+      if (list.length === 0) {
+        container.innerHTML = "<p style='font-size:13px; color:#64748b;'>Tidak ada paket tembak aktif.</p>";
+        return;
+      }
+
+      list.forEach(p => {
+        const card = document.createElement('div');
+        card.className = "pkg-card";
+        card.innerHTML = `
+          <div class="pkg-top">
+            <div class="pkg-avatar">🎯</div>
+            <div class="pkg-info">
+              <div class="pkg-title">${p.nama}</div>
+              <div class="pkg-desc">Klik untuk tembak paket ke nomor tujuan</div>
+              <span class="pkg-spec-pill">⚡ ${p.kuota || '-'}</span>
+              <span class="pkg-spec-pill">📅 ${p.masa_aktif || '-'}</span>
+            </div>
+          </div>
+          <div class="pkg-bottom">
+            <span class="pkg-price-val">${p.harga || ''}</span>
+            <button class="btn-action" onclick="eksekusiTembak('${p.base_link}')">Tembak Paket →</button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function eksekusiTembak(baseLink) {
+      const phone = getFormattedPhone();
+      if (!phone || phone.length < 9) {
+        alert("Harap masukkan nomor Telkomsel dengan benar!");
+        return;
+      }
+      const targetUrl = baseLink.replace('{NOMOR}', phone);
+      window.open(targetUrl, '_blank');
+    }
+
+    function renderVpnLinks() {
+      const container = document.getElementById('vpn-links-container');
+      container.innerHTML = "";
+      
+      if (dbData.aplikasi_vpn && dbData.aplikasi_vpn.length > 0) {
+        const vpnApp = dbData.aplikasi_vpn[0];
+        vpnApp.links.forEach(l => {
+          const btn = document.createElement('a');
+          btn.className = "link-btn";
+          btn.href = l.url;
+          btn.target = "_blank";
+          btn.rel = "noopener";
+          btn.innerText = l.teks;
+          container.appendChild(btn);
+        });
+      }
+    }
+
+    function generateQRCode() {
+      const text = document.getElementById('qrLinkInput').value.trim();
+      if (!text) {
+        alert("Masukkan link/URL terlebih dahulu!");
+        return;
+      }
+      const out = document.getElementById('qrcode-output');
+      out.innerHTML = "";
+      new QRCode(out, {
+        text: text,
+        width: 180,
+        height: 180
+      });
+    }
+
+    async function initData() {
+      try {
+        const res = await fetch(`database.json?v=${Date.now()}`);
+        if (res.ok) {
+          dbData = await res.json();
+        }
+      } catch (e) {
+        console.log("Menggunakan database lokal/fallback.", e);
+      }
+      renderMyTelkomsel();
+      renderTembakPaket();
+      renderVpnLinks();
+    }
+
+    document.addEventListener("DOMContentLoaded", initData);
+  </script>
 </body>
 </html>
